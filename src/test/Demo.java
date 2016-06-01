@@ -53,9 +53,9 @@ public class Demo {
 
         Visitor v1 = new InformationList();
         Visitor v2 = new Contents();
-        v1.visit(sportsNews);
+        sportsNews.accept(v1);
         System.out.println("\n=================\n");
-        v2.visit(sportsNews);
+        sportsNews.accept(v2);
     }
 
 }

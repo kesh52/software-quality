@@ -2,8 +2,6 @@ package model;
 
 import java.util.ArrayList;
 
-import visitor.Visitor;
-
 public abstract class CompositeContent implements Content {
 
     protected ArrayList<Content> children = new ArrayList<>();
@@ -22,10 +20,6 @@ public abstract class CompositeContent implements Content {
         this.getChildren().add(element);
     }
 
-    public void accept(Visitor v) {
-        v.visit(this);
-    }
-
     /**
      * Get the title of the article.
      * @return title
@@ -41,5 +35,4 @@ public abstract class CompositeContent implements Content {
     public String getAuthor() {
         return author;
     }
-
 }

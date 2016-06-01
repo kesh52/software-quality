@@ -1,5 +1,7 @@
 package model;
 
+import visitor.Visitor;
+
 public class Image extends AtomicContent{
     private int width;
     private int height;
@@ -46,5 +48,9 @@ public class Image extends AtomicContent{
         System.out.println("#       #");
         System.out.println("#       #");
         System.out.println("#########");
+    }
+
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
     }
 }

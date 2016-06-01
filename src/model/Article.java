@@ -1,5 +1,7 @@
 package model;
 
+import visitor.Visitor;
+
 public class Article extends CompositeContent {
     private String content;
 
@@ -27,5 +29,12 @@ public class Article extends CompositeContent {
      */
     public String getContent() {
         return content;
+    }
+
+    public void accept(Visitor v) {
+        v.visit(this);
+        for(Content elem : this.children) {
+            elem.accept(v);
+        }
     }
 }

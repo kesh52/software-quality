@@ -1,7 +1,11 @@
 package visitor;
 
-import model.Content;
+import model.Article;
+import model.Image;
+import model.NewsCollection;
 
 public interface Visitor {
-    void visit(Content element);
+    void visit(Article element);
+    void visit(Image element);
+    void visit(NewsCollection element);
 }
